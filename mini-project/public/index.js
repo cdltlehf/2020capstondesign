@@ -25,6 +25,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
+      if (this.readyState == 3) {
+        result.innerHTML = `<li class='noresult'>잠시만 기다려주세요....</li>`;
+      }
       if (this.readyState == 4 && this.status == 200) {
         result.innerHTML = "";
         data = JSON.parse(xhttp.responseText);
