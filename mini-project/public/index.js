@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     const url = "https://8oi9s0nnth.apigw.ntruss.com/corona19-masks/v1/storesByAddr/json?address=";
 
     var xhttp = new XMLHttpRequest();
+    result.innerHTML = '';
     xhttp.onreadystatechange = function() {
       if (this.readyState == 3) {
         result.innerHTML = `<li class='noresult'>잠시만 기다려주세요....</li>`;
