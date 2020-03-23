@@ -14,10 +14,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
       search.onclick();
       search.classList.add("hover");
     }
-    if (address.value=="") result.innerHTML="";
   }
   address.onkeyup = (e) => {
     search.classList.remove("hover");
+    if (address.value=="") result.innerHTML="";
   }
   search.onclick = () => {
     const value = address.value;
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var xhttp = new XMLHttpRequest();
     result.innerHTML = '';
     xhttp.onreadystatechange = function() {
-      if (this.readyState == 3) {
+      if (this.readyState == 1) {
         result.innerHTML = `<li class='noresult'>잠시만 기다려주세요....</li>`;
       }
       if (this.readyState == 4 && this.status == 200) {
