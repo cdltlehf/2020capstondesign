@@ -10,6 +10,9 @@ html
         top: 30%;
         width: 50%;
       }
+      *:focus {
+        outline: none;
+      }
 
       button {
         position: fixed;
@@ -31,6 +34,12 @@ html
 
       li {
         list-style-type: none;
+        translateX: -3px;
+        padding-left: 5px;
+      }
+
+      li:last-child{
+        margin-bottom: 5px;
       }
 
       h3 {
@@ -39,7 +48,7 @@ html
       }
 
       li:hover {
-        outline-left: 5px solid black;
+        box-shadow: -3px 0 0 black;
       }
 
       p {
@@ -59,11 +68,13 @@ html
         color: grey;
         font-size: 12px;
         text-align: center;
+        margin: 30px;
+      }
 
   body
     #container
       h1 Mini Project
-      input#address(type='text' value='강원도 춘천시 석사동' placeholder='구 또는 동 단위 까지 입력해주세요 (예: 강원도 춘천시 석사동)' )
+      input#address(type='text' placeholder='구 또는 동 단위 까지 입력해주세요 (예: 강원도 춘천시 석사동, 서울특별시 마포구)' )
       button#search
       ui#result
       blockquote 공적 마스크 판매정보 api를 사용한 주소 기준 동네별 공적 마스크 판매정보 제공 서비스

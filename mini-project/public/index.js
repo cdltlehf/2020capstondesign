@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       search.onclick();
       search.classList.add("hover");
     }
+    if (address.value=="") result.innerHTML="";
   }
   address.onkeyup = (e) => {
     search.classList.remove("hover");
