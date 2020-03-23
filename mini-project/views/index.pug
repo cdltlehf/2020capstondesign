@@ -71,10 +71,38 @@ html
         margin: 30px;
       }
 
+      span {
+        position: relative;
+        font-size: 12px;
+        background-color: grey;
+        color: white;
+        padding: 3px 5px 3px 5px;
+        margin: 0px 0px 5px 5px;
+        bottom: 3px;
+        border-radius: 3px;
+      }
+
+      .plenty { background-color: #4CAF50; }
+      .some { background-color: #008CBA; }
+      .few { background-color: #f4b536; }
+      .empty { background-color: #f44336; }
+
+      .break { background-color: #555555; }
+      .null { background-color: white; color: #555555; border: 1px solid grey; }
+
+      .noresult {
+        padding-top: 10px;
+        font-size: 15px;
+        color: grey;
+      }
+      .noresult:hover {
+        box-shadow: none;
+      }
+
   body
     #container
       h1 Mini Project
-      input#address(type='text' placeholder='구 또는 동 단위 까지 입력해주세요 (예: 강원도 춘천시 석사동, 서울특별시 마포구)' )
+      input#address(type='text' placeholder='구 또는 동 단위까지 정확하게 입력해주세요 (예: 강원도 춘천시 석사동, 서울특별시 마포구)' )
       button#search
       ui#result
       blockquote 공적 마스크 판매정보 api를 사용한 주소 기준 동네별 공적 마스크 판매정보 제공 서비스

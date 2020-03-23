@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     alert("현재 위치는 : " + latitude + ", "+ longitude);
   });
   
-  address.onkeypress = (e) => {
+  address.onkeydown = (e) => {
     if (e.keyCode == 13) {
       search.onclick();
       search.classList.add("hover");
@@ -28,9 +28,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
       if (this.readyState == 4 && this.status == 200) {
         result.innerHTML = "";
         data = JSON.parse(xhttp.responseText);
-        for (let {addr, name} of data.stores) {
-          const li = document.createElement('li');
-          li.innerHTML = `<h3>${name}</h3><p>${addr}</p>`;
+	if (data.stores.length == 0 && value != "") {
+          result.innerHTML = `<li class='noresult'>'${value}'의 검색 결과가 없습니다.</li>`;
+	}
+        for (let {addr, name, remain_stat} of data.stores) {
+	  const li = document.createElement('li');
+          li.innerHTML = `<h3>${name}<span class='${remain_stat}'>${remain_stat}</span></h3><p>${addr}</p>`;
           result.append(li);
         }
       }
